@@ -28,14 +28,14 @@
                         @if($transaction->transactionable_type == 'App\UserBuyItem')
                             <div class="media my-3">
                                 <div class="media-body">
-                                    <h6>You bought an Item of {{$transaction->transactionable->item->item_name}}</h6>
+                                    <h6>You bought an Item of {{!empty($transaction->transactionable) ? $transaction->transactionable->item->item_name:null}}</h6>
                                     {{$transaction->updated_at->diffForHumans()}}
                                 </div>
                             </div>
                         @else
                             <div class="media my-3">
                                 <div class="media-body">
-                                    <h6>You bought a GiftCard worth of {{$transaction->transactionable->giftcard->gc_name}}</h6>
+                                    <h6>You bought a GiftCard worth of {{!empty($transaction->transactionable) ? $transaction->transactionable->giftcard->gc_name:null}}</h6>
                                     {{$transaction->updated_at->diffForHumans()}}
                                 </div>
                             </div>

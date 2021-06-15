@@ -29,9 +29,6 @@ class HomeController extends Controller
         ->with('transactionable', 'userbuyitem', 'userbuyitem.item', 'usergiftcard', 'usergiftcard.giftcard')->get();
 
      
-        // foreach($transactions as $transaction){
-        //     dd($transaction->userbuyitem);
-        // }
         return view('home', compact('transactions'));
     }
 }

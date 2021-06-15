@@ -32,8 +32,8 @@
                    <td>{{$gc->gc_name}} Points</td>
                    <td>{{$gc->points}}.00</td>
                    <td class="row">
-                        <a href="#" class="btn btn-warning mr-2"><i class="bi bi-pencil-square"></i></a>
-                        <form method="POST"action="#">
+                        <a href="{{route('giftcards.edit', $gc->id)}}" class="btn btn-warning mr-2"><i class="bi bi-pencil-square"></i></a>
+                        <form method="POST"action="{{route('giftcards.delete', $gc->id)}}">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger"><i class="bi bi-trash-fill"></i></button>
